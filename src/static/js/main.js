@@ -28,7 +28,6 @@ const screenIcon = document.getElementById('screen-icon');
 const screenContainer = document.getElementById('screen-container');
 const screenPreview = document.getElementById('screen-preview');
 const inputAudioVisualizer = document.getElementById('input-audio-visualizer');
-const apiKeyInput = document.getElementById('api-key');
 const voiceSelect = document.getElementById('voice-select');
 const languageSelect = document.getElementById('language-select');
 const fpsInput = document.getElementById('fps-input');
@@ -40,16 +39,12 @@ const applyConfigButton = document.getElementById('apply-config');
 const responseTypeSelect = document.getElementById('response-type-select');
 
 // Load saved values from localStorage
-const savedApiKey = localStorage.getItem('gemini_api_key');
 const savedVoice = localStorage.getItem('gemini_voice');
 const savedLanguage = localStorage.getItem('gemini_language');
 const savedFPS = localStorage.getItem('video_fps');
 const savedSystemInstruction = localStorage.getItem('system_instruction');
 
 
-if (savedApiKey) {
-    apiKeyInput.value = savedApiKey;
-}
 if (savedVoice) {
     voiceSelect.value = savedVoice;
 }
@@ -257,13 +252,7 @@ async function resumeAudioContext() {
  * @returns {Promise<void>}
  */
 async function connectToWebsocket() {
-    if (!apiKeyInput.value) {
-        logMessage('Please input API Key', 'system');
-        return;
-    }
-
     // Save values to localStorage
-    localStorage.setItem('gemini_api_key', apiKeyInput.value);
     localStorage.setItem('gemini_voice', voiceSelect.value);
     localStorage.setItem('gemini_language', languageSelect.value);
     localStorage.setItem('system_instruction', systemInstructionInput.value);
@@ -290,7 +279,7 @@ async function connectToWebsocket() {
     };
 
     try {
-        await client.connect(config, apiKeyInput.value);
+        await client.connect(config);
         isConnected = true;
         await resumeAudioContext();
         connectButton.textContent = 'Disconnect';
