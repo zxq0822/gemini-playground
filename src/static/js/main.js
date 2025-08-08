@@ -279,7 +279,7 @@ async function connectToWebsocket() {
     };
 
     try {
-        await client.connect(config);
+        await client.connect(config, "placeholder");
         isConnected = true;
         await resumeAudioContext();
         connectButton.textContent = 'Disconnect';
