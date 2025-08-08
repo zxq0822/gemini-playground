@@ -59,15 +59,18 @@ body {
 }
 
 .log-entry.system {
-    color: #080; /* Green for system messages */
+    color: #080;
+    /* Green for system messages */
 }
 
 .log-entry.user {
-    color: #008; /* Blue for user messages */
+    color: #008;
+    /* Blue for user messages */
 }
 
 .log-entry.ai {
-    color: #800; /* Red for AI messages */
+    color: #800;
+    /* Red for AI messages */
 }
 
 .log-entry .timestamp {
@@ -87,7 +90,8 @@ body {
     margin-right: 10px;
 }
 
-#send-button, #mic-button {
+#send-button,
+#mic-button {
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -99,16 +103,19 @@ body {
     overflow: hidden;
 }
 
-#send-button:hover, #mic-button:hover {
+#send-button:hover,
+#mic-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#send-button:active, #mic-button:active {
+#send-button:active,
+#mic-button:active {
     transform: translateY(1px);
 }
 
-#send-button::after, #mic-button::after {
+#send-button::after,
+#mic-button::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -121,7 +128,8 @@ body {
     transition: width 0.3s ease, height 0.3s ease;
 }
 
-#send-button:active::after, #mic-button:active::after {
+#send-button:active::after,
+#mic-button:active::after {
     width: 200px;
     height: 200px;
 }
@@ -146,9 +154,11 @@ body {
     0% {
         transform: scaleY(1);
     }
+
     50% {
         transform: scaleY(1.5);
     }
+
     100% {
         transform: scaleY(1);
     }
@@ -441,13 +451,15 @@ body {
 
 #input-audio-visualizer .audio-bar {
     height: 100%;
-    background-color: #34a853; /* Green for input audio */
+    background-color: #34a853;
+    /* Green for input audio */
     width: 0%;
 }
 
 #audio-visualizer .audio-bar {
     height: 100%;
-    background-color: #4285f4; /* Blue for output audio */
+    background-color: #4285f4;
+    /* Blue for output audio */
     width: 0%;
 }
 
@@ -456,9 +468,11 @@ body {
     0% {
         transform: scaleY(1);
     }
+
     50% {
         transform: scaleY(1.5);
     }
+
     100% {
         transform: scaleY(1);
     }
@@ -481,12 +495,12 @@ body {
     width: 300px;
 }
 
-#voice-select  #response-type-select{
+#voice-select #response-type-select {
     padding: 4px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
- 
+
 /* Configuration panel */
 #config-container {
     background: var(--surface-color);
@@ -499,12 +513,14 @@ body {
 #config-container.active {
     display: block;
 }
+
 .config-wrapper {
     display: grid;
     gap: var(--spacing-md);
     max-width: 600px;
     margin: 0 auto;
 }
+
 #apply-config {
     padding: var(--spacing-md);
     background-color: var(--primary-color);
@@ -610,4 +626,42 @@ body {
 .fps-help {
     color: #666;
     font-size: 12px;
+}
+
+#password-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.password-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#password-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#password-submit {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4285f4;
+    color: white;
+    cursor: pointer;
 }
