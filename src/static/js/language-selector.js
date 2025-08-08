@@ -1,6 +1,6 @@
 const languages = [
     { name: 'English (US)', code: 'en-US' },
-    { name: 'Mandarin Chinese (China)', code: 'cmn-CN' },
+    { name: 'Mandarin Chinese (China)', code: 'zh-CN' },
     { name: 'English (Australia)', code: 'en-AU' },
     { name: 'English (UK)', code: 'en-GB' },
     { name: 'English (India)', code: 'en-IN' },
