@@ -572,6 +572,7 @@ passwordSubmit.addEventListener('click', () => {
     if (passwordInput.value === 'qing') {
         passwordModal.style.display = 'none';
         app.style.display = 'block';
+        connectToWebsocket();
     } else {
         alert('Incorrect password');
     }
